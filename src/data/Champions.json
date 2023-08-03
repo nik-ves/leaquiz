@@ -1,0 +1,26 @@
+{
+  "Aatrox": {
+    "gender": "Male",
+    "positions": "Top",
+    "rangeType": "Melee",
+    "yearOfRelease": "2013",
+    "race": "Darkin",
+    "regions": "Runeterra"
+  },
+  "Ahri": {
+    "gender": "Female",
+    "positions": "Mid",
+    "rangeType": "Range",
+    "yearOfRelease": "2011",
+    "race": "Vastaya",
+    "regions": "Ionia"
+  },
+  "Akali": {
+    "gender": "Female",
+    "positions": "Top / Mid",
+    "rangeType": "Melee",
+    "yearOfRelease": "2010",
+    "race": "Human",
+    "regions": "Ionia"
+  }
+}
