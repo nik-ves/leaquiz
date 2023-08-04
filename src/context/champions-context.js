@@ -1,17 +1,28 @@
 import axios from "axios";
-import React from "react";
-import Champions from "../data/Champions.json";
+import React, { useState } from "react";
+import ChampionData from "../data/ChampionData.json";
 
 export const ChampionContext = React.createContext({
   getRandomChampionData: () => {},
-  generateRandomChampionSkin: () => {},
+  generateRandomChampion: () => {},
+  championData: {},
 });
 
 const ChampionContextProvider = (props) => {
-  const generateRandomChampion = () => {
-    const allChampions = Object.keys(Champions);
+  const [championData, setChampionData] = useState({});
 
-    return allChampions[Math.floor(Math.random() * allChampions.length)];
+  const generateRandomChampion = () => {
+    const allChampions = Object.keys(ChampionData);
+
+    console.log(
+      validateChampionName(
+        allChampions[Math.floor(Math.random() * allChampions.length)]
+      )
+    );
+
+    return validateChampionName(
+      allChampions[Math.floor(Math.random() * allChampions.length)]
+    );
   };
 
   const generateRandomChampionSkin = async () => {
@@ -31,29 +42,108 @@ const ChampionContextProvider = (props) => {
       partype: _allData.partype,
       spells: _allData.spells,
       passive: _allData.passive,
-      gender: Champions[_selectedChampion].gender,
-      positions: Champions[_selectedChampion].positions,
-      rangeType: Champions[_selectedChampion].rangeType,
-      yearOfRelease: Champions[_selectedChampion].yearOfRelease,
-      race: Champions[_selectedChampion].race,
-      regions: Champions[_selectedChampion].regions,
+      gender: ChampionData[_selectedChampion].gender,
+      positions: ChampionData[_selectedChampion].positions,
+      rangeType: ChampionData[_selectedChampion].rangeType,
+      yearOfRelease: ChampionData[_selectedChampion].yearOfRelease,
+      race: ChampionData[_selectedChampion].race,
+      regions: ChampionData[_selectedChampion].regions,
     };
   };
 
-  const getRandomChampionData = async () => {
+  const getRandomChampionData = async (_championName) => {
     try {
-      const randomChampion = generateRandomChampion();
+      let selectedChampion = generateRandomChampion();
+      // console.log(`Starting selectedChampion ${selectedChampion}`);
+
+      // if (_championName) {
+      //   selectedChampion = _championName;
+      //   console.log(`Parameter selectedChampion ${selectedChampion}`);
+      // } else {
+      //   selectedChampion = generateRandomChampion();
+      //   console.log(`RNG selectedChampion ${selectedChampion}`);
+      // }
 
       const championData = await axios.get(
-        `https://ddragon.leagueoflegends.com/cdn/12.22.1/data/en_US/champion/${randomChampion}.json`
+        `https://ddragon.leagueoflegends.com/cdn/12.22.1/data/en_US/champion/${selectedChampion}.json`
       );
 
-      return modifyChampionData(
-        championData.data.data[randomChampion],
-        randomChampion
+      setChampionData(
+        modifyChampionData(
+          championData.data.data[selectedChampion],
+          selectedChampion
+        )
       );
+
+      // return modifyChampionData(
+      //   championData.data.data[selectedChampion],
+      //   selectedChampion
+      // );
     } catch (error) {
       // placeholder, currently does nothing
+    }
+  };
+
+  const validateChampionName = (_champion) => {
+    switch (_champion) {
+      case "Aurelion Sol":
+        return "AurelionSol";
+
+      case "Bel'Veth":
+        return "Belveth";
+
+      case "Cho'Gath":
+        return "Chogath";
+
+      case "Dr. Mundo":
+        return "DrMundo";
+
+      case "Jarvan IV":
+        return "JarvanIV";
+
+      case "K'Sante":
+        return "KSante";
+
+      case "Kai'Sa":
+        return "Kaisa";
+
+      case "Kha'Zix":
+        return "Khazix";
+
+      case "Kog'Maw":
+        return "KogMaw";
+
+      case "Lee Sin":
+        return "LeeSin";
+
+      case "Master Yi":
+        return "MasterYi";
+
+      case "Miss Fortune":
+        return "MissFortune";
+
+      case "Nunu & Willump":
+        return "Nunu";
+
+      case "Rek'Sai":
+        return "RekSai";
+
+      case "Renata Glasc":
+        return "Renata";
+
+      case "Tahm Kench":
+        return "TahmKench";
+
+      case "Twisted Fate":
+        return "TwistedFate";
+
+      case "Vel'Koz":
+        return "Velkoz";
+
+      case "Xin Zhao":
+        return "XinZhao";
+      default:
+        return _champion;
     }
   };
 
@@ -85,7 +175,8 @@ const ChampionContextProvider = (props) => {
 
   const champsValue = {
     getRandomChampionData,
-    generateRandomChampionSkin,
+    generateRandomChampion,
+    championData,
   };
 
   return (
