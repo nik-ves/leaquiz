@@ -1,30 +1,32 @@
-import { Fragment, useContext, useState } from "react";
-import GlobalStyles from "./GlobalStyles";
-import { ChampionContext } from "./context/champions-context";
+import { Fragment } from "react";
+import { Route, Switch } from "react-router-dom";
 
-import Champions from "./data/Champions.json";
+import GlobalStyles from "./GlobalStyles";
+import HomePage from "./pages/HomePage";
+import ChampionPage from "./pages/ChampionPage";
+import Logo from "./components/UI/Logo";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
-  const { getRandomChampionData, generateRandomChampionSkin } =
-    useContext(ChampionContext);
-  const [championData, setChampionData] = useState({});
-
-  const getAndSetChampionData = async () => {
-    const test = await getRandomChampionData();
-    setChampionData(test);
-  };
-
-  const allChampions = Object.keys(Champions);
-  console.log(allChampions);
-
   return (
     <Fragment>
       <GlobalStyles />
 
-      <button onClick={getAndSetChampionData}>Test</button>
-      <button onClick={generateRandomChampionSkin}>View</button>
+      <Logo />
 
-      <p>{championData.name}</p>
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+
+        <Route path="/champion" exact>
+          <ChampionPage />
+        </Route>
+
+        <Route path="*">
+          <PageNotFound />
+        </Route>
+      </Switch>
     </Fragment>
   );
 }

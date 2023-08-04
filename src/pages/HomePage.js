@@ -1,9 +1,13 @@
 import Container from "../components/UI/Container";
+import Welcome from "../components/Home/Welcome";
+import Modes from "../components/Home/Modes";
 
 const Home = () => {
   return (
     <Container>
-      <p>Home</p>
+      <Welcome />
+
+      <Modes />
     </Container>
   );
 };
