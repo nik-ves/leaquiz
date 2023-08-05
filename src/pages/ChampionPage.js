@@ -10,22 +10,23 @@ const Desc = styled.p`
 `;
 
 const Champion = () => {
-  const { getRandomChampionData, championData, generateRandomChampion } =
+  const { getRandomChampionData, setGeneratedChampion } =
     useContext(ChampionContext);
-  //const [currentChampion] = useState({});
+  const [championData, setChampionData] = useState([]);
+
+  const startGame = async () => {
+    const data = await getRandomChampionData();
+    setChampionData(data);
+    setGeneratedChampion(data);
+  };
 
   return (
     <Container>
-      <ChampionForm />
-      <p>Guess the champion</p>
+      <ChampionForm generatedChampion={championData} />
+
       <Desc>{championData?.name}</Desc>
-      {/* <Desc>{championData.positions}</Desc>
-      <Desc>{championData.race}</Desc>
-      <Desc>{championData.rangeType}</Desc>
-      <Desc>{championData.regions}</Desc>
-      <Desc>{championData.yearOfRelease}</Desc> */}
-      <button onClick={generateRandomChampion}>Random champ</button>
-      <button onClick={getRandomChampionData}>Get data</button>
+
+      <button onClick={startGame}>Start game</button>
     </Container>
   );
 };

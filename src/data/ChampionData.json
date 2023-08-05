@@ -79,7 +79,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Aurelion Sol": {
+  "AurelionSol": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -103,7 +103,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Bel'Veth": {
+  "Belveth": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -159,7 +159,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Cho'Gath": {
+  "Chogath": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -191,7 +191,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Dr. Mundo": {
+  "DrMundo": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -367,7 +367,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Jarvan IV": {
+  "JarvanIV": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -407,7 +407,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "K'Sante": {
+  "KSante": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -415,7 +415,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Kai'Sa": {
+  "Kaisa": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -487,7 +487,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Kha'Zix": {
+  "Khazix": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -511,7 +511,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Kog'Maw": {
+  "KogMaw": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -519,7 +519,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "LeBlanc": {
+  "Leblanc": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -527,7 +527,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Lee Sin": {
+  "LeeSin": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -607,7 +607,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Master Yi": {
+  "MasterYi": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -623,7 +623,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Miss Fortune": {
+  "MissFortune": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -640,14 +640,6 @@
     "regions": "Ionia"
   },
   "Morgana": {
-    "gender": "Female",
-    "positions": "Mid",
-    "rangeType": "Range",
-    "yearOfRelease": "2011",
-    "race": "Vastaya",
-    "regions": "Ionia"
-  },
-  "Naafiri": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -711,7 +703,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Nunu & Willump": {
+  "Nunu": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -799,7 +791,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Rek'Sai": {
+  "RekSai": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -815,7 +807,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Renata Glasc": {
+  "Renata": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -999,7 +991,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Tahm Kench": {
+  "TahmKench": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -1071,7 +1063,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Twisted Fate": {
+  "TwistedFate": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -1127,7 +1119,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Vel'Koz": {
+  "Velkoz": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -1191,7 +1183,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Wukong": {
+  "MonkeyKing": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",
@@ -1215,7 +1207,7 @@
     "race": "Vastaya",
     "regions": "Ionia"
   },
-  "Xin Zhao": {
+  "XinZhao": {
     "gender": "Female",
     "positions": "Mid",
     "rangeType": "Range",

@@ -1,30 +1,42 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Form, SubmitBtn, TextInput, Wrapper } from "./ChampionFormStyles";
-import ChampionData from "../../data/ChampionData.json";
+import { ChampionContext } from "../../context/champions-context";
 
-const ChampionForm = () => {
+const ChampionForm = ({ generatedChampion }) => {
   const [inputValue, setInputValue] = useState("");
-  const [championNames, setChampionNames] = useState(Object.keys(ChampionData));
+  const [userChampionGuess, setUserChampionGuess] = useState("");
+  const [userChampionGuessList, setUserChampionGuessList] = useState([]);
+  const { getRandomChampionData, setInputChampion } =
+    useContext(ChampionContext);
 
   const valueChangeHandler = (event) => {
     setInputValue(event.target.value);
-    console.log(event.target.value);
-
-    // console.log(
-    //   championNames.filter((champion) => {
-    //     return champion.toLowerCase().startsWith(inputTest.toLowerCase());
-    //   })
-    // );
   };
 
   const valueReset = () => {
     setInputValue("");
   };
 
+  const getUserInputChampion = async () => {
+    const data = await getRandomChampionData(inputValue);
+    setUserChampionGuess(data);
+    setInputChampion(data);
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
 
-    console.log(inputValue);
+    getUserInputChampion();
+
+    setUserChampionGuessList([
+      ...userChampionGuessList,
+      [
+        userChampionGuess.name,
+        userChampionGuess.partype,
+        userChampionGuess.gender,
+        userChampionGuess.yearOfRelease,
+      ],
+    ]);
 
     valueReset();
   };
@@ -41,6 +53,8 @@ const ChampionForm = () => {
 
         <SubmitBtn type="submit">Guess!</SubmitBtn>
       </Form>
+
+      {userChampionGuessList.map((guess) => console.log(guess))}
     </Wrapper>
   );
 };
